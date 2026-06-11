@@ -78,6 +78,10 @@ func TestGematria_Hundreds(t *testing.T) {
 		{"Nun sofit", 700, "ן׳"},
 		{"Pe sofit", 800, "ף׳"},
 		{"Tsadi sofit", 900, "ץ׳"},
+		{"Hundred with dozen", 130, "ק״ל"},
+		{"Hundred with dozen", 470, "ת״ע"},
+		{"Hundred with dozen", 690, "ם״צ"},
+		{"Hundred with dozen", 850, "ף״נ"},
 	}
 
 	for _, tt := range tests {

@@ -1,6 +1,9 @@
 package gematria
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 var (
 	units    = []string{"", "א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט"}
@@ -24,5 +27,9 @@ func Gematria(num int) string {
 	if num == 16 {
 		return "ט״ז"
 	}
-	return fmt.Sprintf("%s״%s", dozens[num/10], units[num%10])
+	if num < 100 {
+		return fmt.Sprintf("%s״%s", dozens[num/10], units[num%10])
+	}
+
+	return fmt.Sprintf("%s״%s", hundreds[int(math.Floor(float64(num/100)))], dozens[(num%100)/10])
 }
