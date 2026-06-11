@@ -49,6 +49,8 @@ func TestGematria_Dozens(t *testing.T) {
 		{"dozens with units", 82, "פ״ב"},
 		{"dozens with units", 46, "מ״ו"},
 		{"dozens with units", 95, "צ״ה"},
+		{"teenfive", 15, "ט״ו"},
+		{"teensix", 16, "ט״ז"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

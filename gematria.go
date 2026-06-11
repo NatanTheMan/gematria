@@ -14,5 +14,11 @@ func Gematria(num int) string {
 	if num%10 == 0 {
 		return fmt.Sprintf("%s׳", dozens[num/10])
 	}
+	if num == 15 {
+		return "ט״ו"
+	}
+	if num == 16 {
+		return "ט״ז"
+	}
 	return fmt.Sprintf("%s״%s", dozens[num/10], units[num%10])
 }
