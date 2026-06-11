@@ -62,3 +62,31 @@ func TestGematria_Dozens(t *testing.T) {
 		})
 	}
 }
+
+func TestGematria_Hundreds(t *testing.T) {
+	tests := []struct {
+		name string // description of this test case
+		num  int
+		want string
+	}{
+		{"Kof", 100, "ק׳"},
+		{"Resh", 200, "ר׳"},
+		{"Shin", 300, "ש׳"},
+		{"Tav", 400, "ת׳"},
+		{"Kaf sofit", 500, "ך׳"},
+		{"Mem sofit", 600, "ם׳"},
+		{"Nun sofit", 700, "ן׳"},
+		{"Pe sofit", 800, "ף׳"},
+		{"Tsadi sofit", 900, "ץ׳"},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := Gematria(tt.num)
+
+			if got != tt.want {
+				t.Errorf("Gematria() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

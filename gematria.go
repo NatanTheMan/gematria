@@ -3,16 +3,20 @@ package gematria
 import "fmt"
 
 var (
-	units  = []string{"", "א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט"}
-	dozens = []string{"", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ", "צ"}
+	units    = []string{"", "א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט"}
+	dozens   = []string{"", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ", "צ"}
+	hundreds = []string{"", "ק", "ר", "ש", "ת", "ך", "ם", "ן", "ף", "ץ"}
 )
 
 func Gematria(num int) string {
 	if num < 10 {
 		return fmt.Sprintf("%s׳", units[num])
 	}
-	if num%10 == 0 {
+	if num < 100 && num%10 == 0 {
 		return fmt.Sprintf("%s׳", dozens[num/10])
+	}
+	if num%100 == 0 {
+		return fmt.Sprintf("%s׳", hundreds[num/100])
 	}
 	if num == 15 {
 		return "ט״ו"
