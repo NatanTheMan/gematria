@@ -28,3 +28,30 @@ func TestGematria_Units(t *testing.T) {
 		})
 	}
 }
+
+func TestGematria_Dozens(t *testing.T) {
+	tests := []struct {
+		name string // description of this test case
+		num  int
+		want string
+	}{
+		{"Yud", 10, "י׳"},
+		{"Caf", 20, "כ׳"},
+		{"Lamed", 30, "ל׳"},
+		{"Mem", 40, "מ׳"},
+		{"Nun", 50, "נ׳"},
+		{"Samech", 60, "ס׳"},
+		{"Ayin", 70, "ע׳"},
+		{"Pei", 80, "פ׳"},
+		{"Tsadi", 90, "צ׳"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := Gematria(tt.num)
+
+			if got != tt.want {
+				t.Errorf("Gematria() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
