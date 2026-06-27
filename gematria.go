@@ -2,7 +2,6 @@ package gematria
 
 import (
 	"fmt"
-	"math"
 )
 
 var (
@@ -31,5 +30,5 @@ func Gematria(num int) string {
 		return fmt.Sprintf("%s״%s", dozens[num/10], units[num%10])
 	}
 
-	return fmt.Sprintf("%s״%s", hundreds[int(math.Floor(float64(num/100)))], dozens[(num%100)/10])
+	return fmt.Sprintf("%s״%s", hundreds[int(num/100)], dozens[(num%100)/10])
 }

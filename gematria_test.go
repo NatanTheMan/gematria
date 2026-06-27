@@ -82,6 +82,12 @@ func TestGematria_Hundreds(t *testing.T) {
 		{"Hundred with dozen", 470, "ת״ע"},
 		{"Hundred with dozen", 690, "ם״צ"},
 		{"Hundred with dozen", 850, "ף״נ"},
+		{"Hundred with dozen and unit", 851, "ףנ״א"},
+		{"Hundred with dozen and unit", 163, "קס״ג"},
+		{"Hundred with dozen and unit", 999, "ץצ״ט"},
+		{"Hundred with dozen and unit", 732, "ןל״ב"},
+		{"Hundred with dozen and unit", 418, "תי״ח"},
+		{"Hundred with dozen and unit", 416, "חט״ז"},
 	}
 
 	for _, tt := range tests {
