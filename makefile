@@ -9,7 +9,7 @@ $(EXEC): $(SCRIPT)
 	$(COMPILER) $(SCRIPT) -o $(EXEC)
 
 run:
-	$(INTERPRETER) $(SCRIPT)
+	$(INTERPRETER) $(SCRIPT) $(ARGS)
 
 clean:
 	rm -f $(EXEC)
