@@ -10,6 +10,7 @@
 (define (to-unit n)
   (list-ref units-list n))
 
+(+ 1 2)
 (define (to-dozen n)
   (cond 
     ((= n 15) "וט")
